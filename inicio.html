@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Billetera Móvil</title>
+  <link rel="stylesheet"href="stilo.css">
+</head>
+<body>
+  <!--logo hibridos-->
+  <div class="logo-hibridos">hibridos</div>
+
+  <!-- Pantalla de Login -->
+  <div class="pantalla activa" id="pantalla-login">
+    <div class="contenedor">
+      <div class="logo">Lizmary Pereira</div>
+      <h2>Ingrese sus datos<br>para iniciar sesión</h2>
+
+      <label for="phone">Ingrese su número de celular</label>
+      <input type="tel" id="phone" maxlength="8" />
+
+      <label for="password">Ingrese su PIN</label>
+      <input type="password" id="password" maxlength="4" />
+
+      <div class="recordar">
+        <label><input type="checkbox" /> Recordar datos</label>
+        <a href="#">¿Olvidó su PIN?</a>
+      </div>
+
+      <div id="errorMessage"></div>
+
+      <button onclick="login()">Iniciar sesión</button>
+
+      <p class="registro">¿No tiene una cuenta? <a href="#">Regístrese aquí</a></p>
+    </div>
+  </div>
+
+  <!-- Pantalla Principal -->
+  <div class="pantalla" id="pantalla-principal">
+    <div class="main-container">
+      <div class="logo">Victoria Pereira</div>
+      <div class="wallet-number">Número de billetera<br><strong>86289853</strong></div>
+
+      <div class="wallet-section">
+        <div class="pocket cordoba">
+          Bolsillo en córdobas<br>
+          <span style="font-size: 20px;">C$ 0.03</span>
+        </div>
+        <div class="pocket dollar">
+          Bolsillo en dólares<br>
+          <span style="font-size: 20px;">$ 0.01</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="action" onclick="mostrarPantalla('pantalla-pagos')">
+          <img src="https://img.icons8.com/ios-filled/50/0aa85e/money-transfer.png" alt="Pagos">
+          Recargas y pagos
+        </div>
+        <div class="action" onclick="mostrarPantalla('pantalla-movimientos')">
+          <img src="https://img.icons8.com/ios-filled/50/66bb6a/time-machine.png" alt="Movimientos">
+          Movimientos
+        </div>
+        <div class="action" onclick="mostrarPantalla('pantalla-transferencias')">
+          <img src="https://img.icons8.com/ios-filled/50/0aa85e/money-bag-euro.png" alt="Transferencias">
+          Transferencias
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pantalla Recargas y Pagos -->
+  <div class="pantalla" id="pantalla-pagos">
+    <div class="contenedor">
+      <button class="volver" onclick="mostrarPantalla('pantalla-principal')">← Volver</button>
+      <div class="logo">Recargas y Pagos</div>
+      <p>Seleccione el servicio:</p>
+      <div class="actions">
+        <div class="action">
+          <img src="https://img.icons8.com/ios-filled/50/000000/electricity.png"/>
+          Luz
+        </div>
+        <div class="action">
+          <img src="https://img.icons8.com/ios-filled/50/000000/water.png"/>
+          Agua
+        </div>
+        <div class="action">
+          <img src="https://img.icons8.com/ios-filled/50/000000/phone.png"/>
+          Teléfono
+        </div>
+        <div class="action">
+          <img src="https://img.icons8.com/ios-filled/50/000000/smartphone-tablet.png"/>
+          Recarga
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pantalla de Movimientos -->
+  <div class="pantalla" id="pantalla-movimientos">
+    <div class="contenedor">
+      <button class="volver" onclick="mostrarPantalla('pantalla-principal')">← Volver</button>
+      <div class="logo">Movimientos</div>
+      <p>Listado de todos los movimientos recientes:</p>
+      <div class="transfer-item">
+        <div class="transfer-title">Transferencia de fondos</div>
+        <div class="transfer-date">26/05/2025 - 11:47</div>
+        <div class="amount-negative">- C$ 8.00</div>
+      </div>
+      <div class="transfer-item">
+        <div class="transfer-title">Transferencia de fondos</div>
+        <div class="transfer-date">19/05/2025 - 9:56</div>
+        <div class="amount-negative">- C$ 110.00</div>
+      </div>
+      <div class="transfer-item">
+        <div class="transfer-title">Transferencia de fondos</div>
+        <div class="transfer-date">19/05/2025 - 9:52</div>
+        <div class="amount-positive">+ C$ 110.00</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pantalla de Transferencias -->
+  <div class="pantalla" id="pantalla-transferencias">
+    <div class="contenedor">
+      <button class="volver" onclick="mostrarPantalla('pantalla-principal')">← Volver</button>
+      <div class="logo">Transferencias</div>
+      <p>Envía dinero a otro número de billetera:</p>
+      <label for="destino">Número de destino</label>
+      <input type="tel" id="destino" maxlength="8" />
+      <label for="monto">Monto a enviar</label>
+      <input type="number" id="monto" placeholder="C$" />
+      <button onclick="enviarTransferencia()">Enviar</button>
+    </div>
+  </div>
+   <script src="app.js"></script>
+</body>
+</html
+
+
